@@ -5,7 +5,7 @@ O SmartPromo é uma SDK para envio de notas em campanhas promocionais.
 ### Gradle
 SmartPromo pode ser adicionado no seu projeto `Android` utilizando o `Gradle`, para isto basta adicionar a linha a seguir no seu arquivo `build.gradle`:
 
-    implementation 'org.bitbucket.getmo:android-smartpromo:1.1.0'
+    implementation 'org.bitbucket.getmo:android-smartpromo:1.1.1'
     
    
 Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build.gradle` no seu modulo:
@@ -29,7 +29,8 @@ Depois é só disparar a função `go` passando uma `Activity` que tudo começa:
 ### Cor da campanha
 Você pode definir qual cor utilizar na interface da campanha. Para isto basta utilizar a função `setColor(Int)`:
 
-    smartPromo.setColor({Int})
+    val color = ContextCompat.getColor({context}, R.color.colorPrimary)
+    smartPromo.setColor(color)
   
 ### Passando um consumidor
 O SmartPromo gerencia o cadastro do consumidor por você, mas caso queira otimizar a experiência de uso, você pode informar para o SmartPromo o consumidor que está utilizando o aplicativo, através da função `setConsumer(FSConsumer)`: 
