@@ -3,11 +3,20 @@ O SmartPromo é uma SDK para envio de notas em campanhas promocionais.
 
 ## Instalação
 ### Gradle
-SmartPromo pode ser adicionado no seu projeto `Android` utilizando o `Gradle`, para isto basta adicionar a linha a seguir no seu arquivo `build.gradle`:
+SmartPromo pode ser adicionado no seu projeto `Android` utilizando o `Gradle`, para isto adicione o repositório do `jitpack.io` ao seu arquivo `build.gradle` a nível de `projeto`, dentro de `allprojects` e `repositories`:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Agora adicione a dependência abaixo ao arquivo `build.gradle` a nível de `módulo`:
 
     implementation 'org.bitbucket.getmo:android-smartpromo:1.4.5'
     
-   
 Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build.gradle` no seu modulo:
 
     compileOptions {
