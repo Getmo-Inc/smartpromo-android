@@ -31,9 +31,11 @@ Para começar a utilizar o SmartPromo, você precisa inicializar com o `id` da c
     val smartPromo = SmartPromo("{campaignID}")
     smartPromo.setupAccessKeyAndSecretKey("{accessKey}", "{secretKey}")
     
-Depois é só disparar a função `go` passando uma `Activity` que tudo começa:
-
+#### Iniciando a SDK no modo campanha:
     smartPromo.go({activity})
+    
+#### Iniciando a SDK no modo Scanner de notas:
+    smartPromo.scan({consumerID}, {activity})
     
 ### Cor da campanha
 Você pode definir qual cor utilizar na interface da campanha. Para isto basta utilizar a função `setColor(Int)`:
@@ -44,12 +46,6 @@ Você pode definir qual cor utilizar na interface da campanha. Para isto basta u
 ### Passando um consumidor
 O SmartPromo gerencia o cadastro do consumidor por você, mas caso queira otimizar a experiência de uso, você pode informar para o SmartPromo o consumidor que está utilizando o aplicativo, através da função `setConsumer(FSConsumer)`: 
 
-    smartPromo.setConsumer({FSPConsumer})
-
-### Utilizar apenas o função de enviar notas
-O SmartPromo também possibilita a utilização apenas do módulo de envio de notas. Nessa modalidade o identificador do consumidor deve ser passado na própria chamada: 
-
-    smartPromo.scan({consumerID}, {activity})
-  
+    smartPromo.setConsumer({FSPConsumer})  
   
 Bom era isso! Esperamos que o tutorial seja útil e se tiver qualquer dúvida ou dica envie um email a nossa equipe developer@getmo.com.br, teremos o maior prazer em te auxiliar.
