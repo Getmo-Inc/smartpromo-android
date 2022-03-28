@@ -46,6 +46,10 @@ O SmartPromo gerencia o cadastro do consumidor por você, mas caso queira otimiz
 
     smartPromo.setConsumer({FSPConsumer})
 
+### Utilizar apenas o função de enviar notas
+O SmartPromo também possibilita a utilização apenas do módulo de envio de notas. Nessa modalidade o identificador do consumidor deve ser passado na própria chamada: 
+
+    smartPromo.scan({consumerID}, {activity})
   
   
 Bom era isso! Esperamos que o tutorial seja útil e se tiver qualquer dúvida ou dica envie um email a nossa equipe developer@getmo.com.br, teremos o maior prazer em te auxiliar.
