@@ -1,5 +1,5 @@
 # SmartPromo
-O SmartPromo é uma SDK para envio de notas em campanhas promocionais. 
+O SmartPromo é uma SDK para envio de notas em campanhas promocionais, compatível com Android API 21+
 
 ## Instalação
 ### Gradle
