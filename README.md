@@ -47,5 +47,10 @@ Você pode definir qual cor utilizar na interface da campanha. Para isto basta u
 O SmartPromo gerencia o cadastro do consumidor por você, mas caso queira otimizar a experiência de uso, você pode informar para o SmartPromo o consumidor que está utilizando o aplicativo, através da função `setConsumer(FSConsumer)`: 
 
     smartPromo.setConsumer({FSPConsumer})  
-  
+
+### Homologação
+Caso queira, você pode utilizar o ambiente de homologação para realizar seus testes. Para isso basta utilizar a função `setIsHomolog(Boolean)`:
+
+    smartPromo.setIsHomolog(true)
+    
 Bom era isso! Esperamos que o tutorial seja útil e se tiver qualquer dúvida ou dica envie um email a nossa equipe developer@getmo.com.br, teremos o maior prazer em te auxiliar.
