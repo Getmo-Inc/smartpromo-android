@@ -15,7 +15,7 @@ allprojects {
 
 Agora adicione a dependência abaixo ao arquivo `build.gradle` a nível de `módulo`:
 
-    implementation 'org.bitbucket.getmo:android-smartpromo:1.9.1'
+    implementation 'org.bitbucket.getmo:android-smartpromo:1.10'
     
 Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build.gradle` no seu modulo:
 
@@ -30,6 +30,9 @@ Para começar a utilizar o SmartPromo, você precisa inicializar com o `id` da c
 
     val smartPromo = SmartPromo("{campaignID}")
     smartPromo.setupAccessKeyAndSecretKey("{accessKey}", "{secretKey}")
+    
+#### Homologação
+    smartPromo.setIsHomolog(true)
     
 #### Iniciando a SDK no modo campanha:
     smartPromo.go({activity})
