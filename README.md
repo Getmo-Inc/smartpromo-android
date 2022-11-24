@@ -15,7 +15,7 @@ allprojects {
 
 Agora adicione a dependência abaixo ao arquivo `build.gradle` a nível de `módulo`:
 
-    implementation 'org.bitbucket.getmo:android-smartpromo:1.10.6'
+    implementation 'org.bitbucket.getmo:android-smartpromo:1.10.7'
     
 Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build.gradle` no seu modulo:
 
