@@ -57,3 +57,23 @@ Caso queira, você pode utilizar o ambiente de homologação para realizar seus 
     smartPromo.setIsHomolog(true)
     
 Bom era isso! Esperamos que o tutorial seja útil e se tiver qualquer dúvida ou dica envie um email a nossa equipe developer@getmo.com.br, teremos o maior prazer em te auxiliar.
+
+## Possíveis Problemas 
+### Não funciona em Release - Proguard
+Dependendo da configuração do seu projeto, o Android pode ofuscar alguns arquivos, o que pode gerar um problema para a nossa SDK. 
+Caso você esteja com problemas apenas quando compila como release ou quando gera o .apk de produção, você pode estar tendo este problema.
+Para resolver siga esses passos:
+1. Adicione essa linha no seu arquivo `proguard-rules.pro` que fica a nível de módulo:
+```
+-keep class br.com.getmo.smartpromo.** { *; }
+```
+2. Caso não tenha este arquivo, basta criá-lo dentro do módulo do app.
+3. Confira se esse arquivo está sendo utilizado dentro do build.gradle do módulo:
+```
+    buildTypes {
+        release {
+            ...
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+```
