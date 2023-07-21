@@ -14,7 +14,7 @@ allprojects {
 ```
 Então adicione a dependência abaixo ao arquivo `build.gradle` a nível de `módulo`:
 
-    implementation 'br.com.getmo:smartpromo:1.12'
+    implementation 'br.com.getmo:smartpromo:1.12.2'
     
 Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build.gradle` no seu modulo:
 
