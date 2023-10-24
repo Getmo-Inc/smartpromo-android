@@ -25,35 +25,57 @@ Para finalizar, você precisa adicionar a compatibilidade com o Java 8 no `build
 
 ## Utilização
 ### Basico
-Para começar a utilizar o SmartPromo, você precisa inicializar com o `id` da campanha e configurar as suas `chaves de acesso`:
+Para começar a utilizar o SmartPromo, você precisa configurar as suas `chaves de acesso`:
 
-    val smartPromo = SmartPromo("{campaignID}")
+    val smartPromo = SmartPromo()
     smartPromo.setupAccessKeyAndSecretKey("{accessKey}", "{secretKey}")
     
+#### Iniciando a SDK no modo campanha única:
+    smartPromo.go("{campaignID}", {activity})
+
+    
+#### Iniciando a SDK no modo de múltiplas campanhas:
+    smartPromo.goMulti(
+        headnote = "{Headnote}",
+        title = "{Title}",
+        message = "{Message}",
+        above = {activity}
+    )
+
+
+#### Iniciando a SDK no modo Scanner de notas:
+    smartPromo.scan(campaignID = "{campaignID}", consumerID = "{consumerID}", {activity})
+
+
+
+### Configurações Extas
+É necessário realizar todas as configurações antes de iniciar a SDK.
+
+
 #### Homologação
+Caso queira, você pode utilizar o ambiente de homologação para realizar seus testes. Para isso basta utilizar a função:
+
     smartPromo.setIsHomolog(true)
     
-#### Iniciando a SDK no modo campanha:
-    smartPromo.go({activity})
     
-#### Iniciando a SDK no modo Scanner de notas:
-    smartPromo.scan({consumerID}, {activity})
-    
-### Cor da campanha
+#### Cor da campanha
 Você pode definir qual cor utilizar na interface da campanha. Para isto basta utilizar a função `setColor(Int)`:
 
     val color = ContextCompat.getColor({context}, R.color.colorPrimary)
     smartPromo.setColor(color)
   
-### Passando um consumidor
+#### Passando um consumidor
 O SmartPromo gerencia o cadastro do consumidor por você, mas caso queira otimizar a experiência de uso, você pode informar para o SmartPromo o consumidor que está utilizando o aplicativo, através da função `setConsumer(FSConsumer)`: 
 
     smartPromo.setConsumer({FSPConsumer})  
 
-### Homologação
-Caso queira, você pode utilizar o ambiente de homologação para realizar seus testes. Para isso basta utilizar a função `setIsHomolog(Boolean)`:
+#### Metadata
+O SmartPromo também oferece a capacidade de inserir informações em um campo genérico que pode ser utilizado para diversos fins. Para fazer isso, utilizamos a seguinte função:
+    
+    smartPromo.setMetadata("Qualquer coisa como String")
 
-    smartPromo.setIsHomolog(true)
+
+  
     
 Bom era isso! Esperamos que o tutorial seja útil e se tiver qualquer dúvida ou dica envie um email a nossa equipe developer@getmo.com.br, teremos o maior prazer em te auxiliar.
 
