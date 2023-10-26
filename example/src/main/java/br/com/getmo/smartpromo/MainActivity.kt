@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun actionOpen(view: View) {
-        val smartPromo = SmartPromo("{campaignID}")
+        val smartPromo = SmartPromo()
         smartPromo.setupAccessKeyAndSecretKey("{accessKey}", "{secretKey}")
 
         smartPromo.setColor(ContextCompat.getColor(this, R.color.colorPrimary))
@@ -23,6 +23,6 @@ class MainActivity : AppCompatActivity() {
         consumer.cpf = "{cpf}"
         smartPromo.setConsumer(consumer)
 
-        smartPromo.go(this)
+        smartPromo.go("{campaignID}", this)
     }
 }
