@@ -83,3 +83,17 @@ Para resolver siga esses passos:
         }
     }
 ```
+
+### Classe duplicada: kotlinx.android.parcel.*
+Se você estiver usando Kotlin 2.x ou superior e encontrar um erro como:
+```
+Duplicate class kotlinx.android.parcel.Parcelize found in modules kotlin-android-extensions-runtime and kotlin-parcelize-runtime
+```
+Isso ocorre porque alguma dependência do seu projeto ainda referencia o artefato antigo `kotlin-android-extensions-runtime`, que contém as mesmas classes do `kotlin-parcelize-runtime` utilizado pelas versões modernas do Kotlin.
+
+Para resolver, adicione a exclusão global no `build.gradle` do seu módulo:
+```groovy
+configurations.all {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-android-extensions-runtime'
+}
+```
