@@ -3,8 +3,7 @@ package br.com.getmo.smartpromo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
-import br.com.getmo.smartpromo.models.FSPConsumer
+import br.com.getmo.smartpromo.FSPConsumer
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,10 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun actionOpen(view: View) {
-        val smartPromo = SmartPromo()
-        smartPromo.setupAccessKeyAndSecretKey("{accessKey}", "{secretKey}")
-
-        smartPromo.setColor(ContextCompat.getColor(this, R.color.colorPrimary))
+        val smartPromo = SmartPromo(accessKey = "{accessKey}", secretKey = "{secretKey}")
 
         val consumer = FSPConsumer()
         consumer.cpf = "{cpf}"
